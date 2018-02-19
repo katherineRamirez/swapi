@@ -10,8 +10,6 @@ body {
     margin-top: 2em;
 }
 
-
-
 .btn {
     background-color: #856342;
     opacity: 0.8;
@@ -23,9 +21,7 @@ body {
 }
 
 .btn:hover {
-
     color: #fa9480 !important;
-
 }
 
 .containerImages {
@@ -33,13 +29,29 @@ body {
     flex-direction: row;
     margin-top: 2em;
     border: 1px #c68b83 solid !important;
-    height: 30em;
-    margin:2em;
+    height: 38em;
+    margin: 2em;
+    color: white;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.divImage{
+    width: 15em;
+    height: 10em;
+    background-color: antiquewhite;
+    margin: 1em;
+    text-align: center;
+    color: #856342;
+    font-weight: bold;
+    border: 2px burlywood solid;
+}
+
+img{
+    width: 5em;
 }
 
 .rowFlex{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    text-align: center;
 }
 
