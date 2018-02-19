@@ -16,4 +16,14 @@ fetch('https://swapi.co/api/people/')
             divImage.appendChild(ptextImage);
             containerImages.appendChild(divImage);
         }
+
+        
+        for (let i = 0; i < data.results[i].name.length; i++){       
+           let containerName = [];
+           let name = data.results[i].name;
+           let gender = data.results[i].gender;
+           containerName.push(gender);
+           containerName.push(name);
+           console.log(containerName)
+        }
     });
