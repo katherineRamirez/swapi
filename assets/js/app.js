@@ -128,5 +128,5 @@ fetch('https://swapi.co/api/people/')
    let gender = data.results[i].gender;
    containerName.push(gender);
    containerName.push(name);
-   console.log(containerName)
+   console.log(containerNafme)
 }*/
