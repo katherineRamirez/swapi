@@ -72,14 +72,13 @@ fetch('https://swapi.co/api/people/')
                 let btnFemale = document.getElementById('btnFemale');
                 btnFemale.onclick = function () {
                     let containerImages = document.querySelector('.containerImages');
+                    
                     for (let i = 0; i < containerImages.childNodes.length - 1; i++) {
+                        containerImages.childNodes[i].nextSibling.style.display = 'inline';
                         let namee = containerImages.childNodes[i].nextSibling.lastChild.firstChild;
                         let gender = data.results[i].gender;
                         if (gender !== 'female') {
-
                             containerImages.childNodes[i].nextSibling.style.display = 'none';
-
-
                         }
                     }
 
@@ -91,10 +90,9 @@ fetch('https://swapi.co/api/people/')
                     for (let j = 0; j < containerImages.childNodes.length - 1; j++) {
                         let namee = containerImages.childNodes[j].nextSibling.lastChild.firstChild;
                         let gender = data.results[j].gender;
+                        containerImages.childNodes[j].nextSibling.style.display = 'inline';
                         if (gender !== 'male') {
-
                             containerImages.childNodes[j].nextSibling.style.display = 'none';
-
                         }
                     }
                 }
@@ -105,6 +103,8 @@ fetch('https://swapi.co/api/people/')
                     for (let j = 0; j < containerImages.childNodes.length - 1; j++) {
                         let namee = containerImages.childNodes[j].nextSibling.lastChild.firstChild;
                         let gender = data.results[j].gender;
+                        containerImages.childNodes[j].nextSibling.style.display = 'inline';
+
                         if (gender !== 'n/a') {
 
                             containerImages.childNodes[j].nextSibling.style.display = 'none';
