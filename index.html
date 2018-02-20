@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="shortcut icon" href="assets/images/title.png">
+    <title>SWAPI</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+    
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
@@ -30,7 +33,7 @@
 </header>
 <body>
     <section>
-        <div class="container">
+        <div id="btnsGender" class="container">
             <div class="row">
                 <div class="col-md-12 buttons">
                     <div class="col-md-3">
@@ -58,7 +61,7 @@
     </section>
 
    <!-- Modal de imagenes -->
-    <section>
+    <section id="sectionModal">
         <div class="row rowFlex">
             <div class="col-md-12">
                 <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -79,6 +82,7 @@
             </div>
         </div>
     </section>
+    <div id="containerFilms" class="hidden"></div>
 
     <script type="text/javascript" src="assets/js/data.js"></script>
 

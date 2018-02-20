@@ -1,0 +1,21 @@
+@media (min-width: 200px) and (max-width: 700px) {
+	[class*="col-"] {
+		width: 100%;
+	}
+	.containerImages{
+	margin: 0.2em;
+	position: relative;
+	top: 1em;
+	height: 100%;
+	}
+	.divImage{
+	width: 8em;
+    height: 6em;
+	}
+	img{
+    width: 3em;
+	}
+	.namePerson{
+	font-size: 0.80em;
+	}
+}

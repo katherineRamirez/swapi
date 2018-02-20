@@ -5,7 +5,7 @@ fetch('https://swapi.co/api/people/')
         return response.json();
     })
     .then(function (data) {
-        console.log(data);
+        //console.log(data);
         let containerImages = document.querySelector('.containerImages');
 
         for (let index = 0; index < data.results.length; index++) {
@@ -21,6 +21,7 @@ fetch('https://swapi.co/api/people/')
             image.setAttribute('src', swapi[index].image);
             let textImage = document.createTextNode(data.results[index].name);
             let ptextImage = document.createElement('p');
+            ptextImage.setAttribute('class','namePerson');
             aImage.appendChild(image);
             ptextImage.appendChild(textImage);
             divImage.appendChild(aImage);
@@ -59,6 +60,11 @@ fetch('https://swapi.co/api/people/')
               containerHeight.setAttribute('class','height');
               containerHeight.appendChild(document.createTextNode('Height: ' +data.results[index].height))
               
+              let containerMoreInfo = document.createElement('button');
+              containerMoreInfo.setAttribute('class','colorButton');
+              containerMoreInfo.setAttribute('id','btnMoreInfo');
+              containerMoreInfo.appendChild(document.createTextNode('More Info'));
+
               let modalbody = document.querySelector('.modal-body');
               modalbody.innerHTML = '';
               modalbody.appendChild(boxImagem);
@@ -66,22 +72,62 @@ fetch('https://swapi.co/api/people/')
               modalbody.appendChild(containerEyeColor);
               modalbody.appendChild(containerHairColor);
               modalbody.appendChild(containerHeight);
+              modalbody.appendChild(containerMoreInfo);
+
+              btnMoreInfo.addEventListener('click', function(){
+              let sectionBtnsGender = document.getElementById('btnsGender');
+              let sectionModal = document.getElementById('sectionModal');
+              sectionBtnsGender.setAttribute('class', 'hidden');
+              containerImages.setAttribute('class', 'hidden');
+              sectionModal.setAttribute('class', 'hidden');
+
+              for(let j = 0; j < data.results[index].films.length; j++){
+                //console.log(data.results[index].films[j])
+                if(data.results[index].films[j] == 'https://swapi.co/api/films/1/'){
+                let containerFilms = document.getElementById('containerFilms');
+                containerFilms.setAttribute('class','inline');
+              }
+              }
+              
+              //console.log(data.results[index].films); 
+              });
             }
           }
         });
       }
   }
+    fetch('https://swapi.co/api/films/')
+
+    .then(function (respon) {
+        //Turns the the JSON into a JS object
+        return respon.json();
+    })
+    .then(function (dato) {
+      //console.log(dato.results)
+
+    let containerFilms = document.getElementById('containerFilms');
+
+    let containerTitleFilm = document.createElement('h1');
+    containerTitleFilm.setAttribute('class','titleFilm');
+    containerTitleFilm.appendChild(document.createTextNode('Movie: ' +dato.results[0].title));
+
+    let containerEpisodio = document.createElement('h5');
+    containerEpisodio.setAttribute('class','episodioFilm');
+    containerEpisodio.appendChild(document.createTextNode('Episodio: ' +dato.results[0].episode_id));
+
+    let containerDirector = document.createElement('h3');
+    containerDirector.setAttribute('class','directorFilm');
+    containerDirector.appendChild(document.createTextNode('Director: ' +dato.results[0].director));
+
+    let containerGeorge = document.createElement('img');
+    containerGeorge.setAttribute('class','georgeImg');
+    containerGeorge.setAttribute('src','assets/images/georgeLucas.jpg');
+
+    containerFilms.appendChild(containerTitleFilm);
+    containerFilms.appendChild(containerEpisodio);
+    containerFilms.appendChild(containerDirector);
+    containerFilms.appendChild(containerGeorge);
+  }); 
 
     });
-            
-
-
         
-        /*for (let i = 0; i < data.results[i].name.length; i++){       
-           let containerName = [];
-           let name = data.results[i].name;
-           let gender = data.results[i].gender;
-           containerName.push(gender);
-           containerName.push(name);
-           console.log(containerName)
-        }*/

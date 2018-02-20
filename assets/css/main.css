@@ -1,6 +1,7 @@
 body {
     /*background-color: #403631 !important;*/
     background-image: url(../images/fondo.jpg);
+    background-repeat: no-repeat;
 }
 .imgStarWars{
     width: 9em;
@@ -58,5 +59,24 @@ img{
 
 .rowFlex{
     text-align: center;
+}
+.colorButton{
+    background-color: #856342;
+    opacity: 0.8;
+    color: white;
+    padding: 0.50em 1em;
+}
+.titleFilm, .episodioFilm, .directorFilm{
+    text-align: center;
+    opacity: 2em;
+    color: white;
+}
+.titleFilm{
+    margin-top: 2em;
+}
+.georgeImg{
+    width: 70%;
+    margin-left: 4em;
+    margin-top: 2em;
 }
 
