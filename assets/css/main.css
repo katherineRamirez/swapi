@@ -1,6 +1,10 @@
 body {
     /*background-color: #403631 !important;*/
     background-image: url(../images/fondo.jpg);
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    
 }
 .imgStarWars{
     width: 9em;
