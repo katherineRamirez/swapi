@@ -21,7 +21,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 </head>
-
+<header>
+    <div class="row rowFlex">
+        <div class="col-md-12 center">
+            <img class="imgStarWars" src="assets/images/title.png">
+        </div>
+    </div>
+</header>
 <body>
     <section>
         <div class="container">
@@ -50,6 +56,30 @@
             </div>
         </div>
     </section>
+
+   <!-- Modal de imagenes -->
+    <section>
+        <div class="row rowFlex">
+            <div class="col-md-12">
+                <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">Esto es un modal</h4>
+                            </div>
+                            <div class="modal-body">
+                                Texto del modal
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script type="text/javascript" src="assets/js/data.js"></script>
 
     <script type="text/javascript" src="assets/js/app.js"></script>
