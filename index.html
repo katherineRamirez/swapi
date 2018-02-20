@@ -5,45 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link rel="shortcut icon" href="assets/images/title.png">
     <title>SWAPI</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/media.css">
-    
+
     <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/main.css">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous">
-        divImage
+        crossorigin="anonymous"> divImage
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
 </head>
 <header>
-    <div class="row rowFlex">
-        <div class="col-md-12 center">
-            <img class="imgStarWars" src="assets/images/title.png">
+    <div class="container">
+        <div class="row rowFlex">
+            <div class="col-md-12 center">
+                <img class="imgStarWars" src="assets/images/title.png">
+            </div>
         </div>
     </div>
 </header>
+
 <body>
     <section>
         <div id="btnsGender" class="container">
             <div class="row">
                 <div class="col-md-12 buttons">
                     <div class="col-md-3">
-                        <button type="button" class="btn">Female</button>
+                        <button class="btn" id="btnFemale" type="submit">Female</button>
+                    </div>
+                    <div climgStarWarsass="col-md-3">
+                        <button class="btn" id="btnMale" type="submit">Male</button>
                     </div>
                     <div class="col-md-3">
-                        <button type="button" class="btn">Male</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button type="button" class="btn">N/A</button>
+                        <button class="btn" id="btnNA" type="submit">N/A</button>
                     </div>
                 </div>
             </div>
@@ -60,8 +64,12 @@
         </div>
     </section>
 
-   <!-- Modal de imagenes -->
+
+
+    <!-- Modal de imagenes -->
+    <section>
     <section id="sectionModal">
+
         <div class="row rowFlex">
             <div class="col-md-12">
                 <div class="modal fade" id="miModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -87,6 +95,4 @@
     <script type="text/javascript" src="assets/js/data.js"></script>
 
     <script type="text/javascript" src="assets/js/app.js"></script>
-
-
 </html>

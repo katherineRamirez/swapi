@@ -1,7 +1,10 @@
 body {
     /*background-color: #403631 !important;*/
     background-image: url(../images/fondo.jpg);
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+    
 }
 .imgStarWars{
     width: 9em;
@@ -33,11 +36,13 @@ body {
     flex-direction: row;
     margin-top: 2em;
     border: 1px #c68b83 solid !important;
-    height: 38em;
+    min-height: 38em;
     margin: 2em;
     color: white;
     flex-wrap: wrap;
     padding: 1em;
+    justify-content: center;
+
 }
 
 .divImage{
