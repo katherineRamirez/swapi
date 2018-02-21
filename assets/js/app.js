@@ -30,7 +30,7 @@ fetch('https://swapi.co/api/people/')
                 let btnFemale = document.getElementById('btnFemale');
                 btnFemale.onclick = function () {
                     let containerImages = document.querySelector('.containerImages');
-                    
+
                     for (let i = 0; i < containerImages.childNodes.length - 1; i++) {
                         containerImages.childNodes[i].nextSibling.style.display = 'inline';
                         let namee = containerImages.childNodes[i].nextSibling.lastChild.firstChild;
@@ -98,64 +98,52 @@ fetch('https://swapi.co/api/people/')
                             modalbody.appendChild(containerEyeColor);
                             modalbody.appendChild(containerHairColor);
                             modalbody.appendChild(containerHeight);
-                          btnMoreInfo.addEventListener('click', function(){
-              let sectionBtnsGender = document.getElementById('btnsGender');
-              let sectionModal = document.getElementById('sectionModal');
-              sectionBtnsGender.setAttribute('class', 'hidden');
-              containerImages.setAttribute('class', 'hidden');
-              sectionModal.setAttribute('class', 'hidden');
-              for(let j = 0; j < data.results[index].films.length; j++){
-                //console.log(data.results[index].films[j])
-                if(data.results[index].films[j] == 'https://swapi.co/api/films/1/'){
-                let containerFilms = document.getElementById('containerFilms');
-                containerFilms.setAttribute('class','inline');
-              }
-              }
-              
-              //console.log(data.results[index].films); 
-              });
-            }
-          }
-        });
-      }
-  }
-    fetch('https://swapi.co/api/films/')
-    .then(function (respon) {
-        //Turns the the JSON into a JS object
-        return respon.json();
-    })
-    .then(function (dato) {
-      //console.log(dato.results)
-    let containerFilms = document.getElementById('containerFilms');
-    let containerTitleFilm = document.createElement('h1');
-    containerTitleFilm.setAttribute('class','titleFilm');
-    containerTitleFilm.appendChild(document.createTextNode('Movie: ' +dato.results[0].title));
-    let containerEpisodio = document.createElement('h5');
-    containerEpisodio.setAttribute('class','episodioFilm');
-    containerEpisodio.appendChild(document.createTextNode('Episodio: ' +dato.results[0].episode_id));
-    let containerDirector = document.createElement('h3');
-    containerDirector.setAttribute('class','directorFilm');
-    containerDirector.appendChild(document.createTextNode('Director: ' +dato.results[0].director));
-    let containerGeorge = document.createElement('img');
-    containerGeorge.setAttribute('class','georgeImg');
-    containerGeorge.setAttribute('src','assets/images/georgeLucas.jpg');
-    containerFilms.appendChild(containerTitleFilm);
-    containerFilms.appendChild(containerEpisodio);
-    containerFilms.appendChild(containerDirector);
-    containerFilms.appendChild(containerGeorge);
-  }); 
-    });
-        
+                            btnMoreInfo.addEventListener('click', function () {
+                                let sectionBtnsGender = document.getElementById('btnsGender');
+                                let sectionModal = document.getElementById('sectionModal');
+                                sectionBtnsGender.setAttribute('class', 'hidden');
+                                containerImages.setAttribute('class', 'hidden');
+                                sectionModal.setAttribute('class', 'hidden');
+                                for (let j = 0; j < data.results[index].films.length; j++) {
+                                    //console.log(data.results[index].films[j])
+                                    if (data.results[index].films[j] == 'https://swapi.co/api/films/1/') {
+                                        let containerFilms = document.getElementById('containerFilms');
+                                        containerFilms.setAttribute('class', 'inline');
+                                    }
+                                }
+
+                                //console.log(data.results[index].films); 
+                            });
                         }
                     }
                 });
-
-                
-
-
             }
         }
-
+        fetch('https://swapi.co/api/films/')
+            .then(function (respon) {
+                //Turns the the JSON into a JS object
+                return respon.json();
+            })
+            .then(function (dato) {
+                //console.log(dato.results)
+                let containerFilms = document.getElementById('containerFilms');
+                let containerTitleFilm = document.createElement('h1');
+                containerTitleFilm.setAttribute('class', 'titleFilm');
+                containerTitleFilm.appendChild(document.createTextNode('Movie: ' + dato.results[0].title));
+                let containerEpisodio = document.createElement('h5');
+                containerEpisodio.setAttribute('class', 'episodioFilm');
+                containerEpisodio.appendChild(document.createTextNode('Episodio: ' + dato.results[0].episode_id));
+                let containerDirector = document.createElement('h3');
+                containerDirector.setAttribute('class', 'directorFilm');
+                containerDirector.appendChild(document.createTextNode('Director: ' + dato.results[0].director));
+                let containerGeorge = document.createElement('img');
+                containerGeorge.setAttribute('class', 'georgeImg');
+                containerGeorge.setAttribute('src', 'assets/images/georgeLucas.jpg');
+                containerFilms.appendChild(containerTitleFilm);
+                containerFilms.appendChild(containerEpisodio);
+                containerFilms.appendChild(containerDirector);
+                containerFilms.appendChild(containerGeorge);
+            });
     });
 
 
