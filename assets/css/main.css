@@ -79,4 +79,11 @@ img{
     margin-left: 4em;
     margin-top: 2em;
 }
+.btnCharacter{
+    margin-top: 3em;
+    margin-left: 9em;
+    background-color: #856342;
+    color: white;
+    padding: 0.50em 1em;
+}
 
