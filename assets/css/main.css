@@ -1,10 +1,7 @@
 body {
     /*background-color: #403631 !important;*/
     background-image: url(../images/fondo.jpg);
-    background-size: cover;
-    background-position: bottom;
-    height: 100vh;
-    
+    background-repeat: no-repeat;
 }
 .imgStarWars{
     width: 9em;
@@ -36,13 +33,11 @@ body {
     flex-direction: row;
     margin-top: 2em;
     border: 1px #c68b83 solid !important;
-    min-height: 38em;
+    height: 38em;
     margin: 2em;
     color: white;
     flex-wrap: wrap;
     padding: 1em;
-    justify-content: center;
-
 }
 
 .divImage{
@@ -83,5 +78,12 @@ img{
     width: 70%;
     margin-left: 4em;
     margin-top: 2em;
+}
+.btnCharacter{
+    margin-top: 3em;
+    margin-left: 9em;
+    background-color: #856342;
+    color: white;
+    padding: 0.50em 1em;
 }
 
