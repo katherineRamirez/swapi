@@ -29,6 +29,14 @@ fetch('https://swapi.co/api/people/')
       containerImages.appendChild(divImage);
 
 /* Función filtro botones de género Masculino, Femenino y N/A */
+      let btnTodos = document.getElementById('btnTodos');
+        btnTodos.onclick = function () {
+      let containerImages = document.querySelector('.containerImages');
+        for (let i = 0; i < containerImages.childNodes.length - 1; i++) {
+        containerImages.childNodes[i].nextSibling.style.display = 'inline';
+        }
+      }
+
       let btnFemale = document.getElementById('btnFemale');
           btnFemale.onclick = function () {
       let containerImages = document.querySelector('.containerImages');
