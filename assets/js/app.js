@@ -14,6 +14,7 @@ fetch('https://swapi.co/api/people/')
         for (let index = 0; index < data.results.length; index++) {
             if (data.results[index].name === swapi[index].name) {
 
+
       let divImage = document.createElement('div'); 
       divImage.className = 'divImage';
       let aImage = document.createElement('a');
@@ -179,6 +180,7 @@ fetch('https://swapi.co/api/films/')
       document.getElementById('sectionModal').style.display = 'block';
       document.getElementById('btnsGender').style.display = 'block';
       document.getElementById('contImages').style.display = 'block';
+
 
     });
   }); 
