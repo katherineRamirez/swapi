@@ -120,10 +120,7 @@ fetch('https://swapi.co/api/people/')
 /* Función del botón More Info, ocultando secciones */
           btnMoreInfo.addEventListener('click', function(){
           document.getElementById('sectionPersonajes').innerHTML = ""; 
-        /*document.getElementById('sectionModal').style.display = 'none';
-        document.getElementById('btnsGender').style.display = 'none';
-        document.getElementById('contImages').style.display = 'none';*/
-        document.getElementById('containerFilms').style.display = 'block';
+          document.getElementById('containerFilms').style.display = 'block';
 
           });
           }
