@@ -40,7 +40,18 @@ fetch('https://swapi.co/api/people/')
                         }
                     }
 
-                
+                    let btnMale = document.getElementById('btnMale');
+                    btnMale.onclick = function () {
+                        let containerImages = document.querySelector('.containerImages');
+                        for (let j = 0; j < containerImages.childNodes.length - 1; j++) {
+                            let namee = containerImages.childNodes[j].nextSibling.lastChild.firstChild;
+                            let gender = data.results[j].gender;
+                            containerImages.childNodes[j].nextSibling.style.display = 'inline';
+                            if (gender !== 'male') {
+                                containerImages.childNodes[j].nextSibling.style.display = 'none';
+                            }
+                        }
+                    }
 
 
                 let btnNA = document.getElementById('btnNA');
