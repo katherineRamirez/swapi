@@ -72,18 +72,25 @@ img{
     color: white;
 }
 .titleFilm{
-    margin-top: 2em;
+    margin-top: 1.3em;
 }
 .georgeImg{
-    width: 70%;
-    margin-left: 4em;
+    width: 55%;
+    margin-left: 20em;
     margin-top: 2em;
 }
 .btnCharacter{
-    margin-top: 3em;
-    margin-left: 9em;
+    position: relative;
+    top: 3em;
+    left: 35em;
     background-color: #856342;
     color: white;
     padding: 0.50em 1em;
+    display: block;
+}
+.filmsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 

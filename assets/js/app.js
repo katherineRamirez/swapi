@@ -14,13 +14,9 @@ fetch('https://swapi.co/api/people/')
         for (let index = 0; index < data.results.length; index++) {
             if (data.results[index].name === swapi[index].name) {
 
-
       let divImage = document.createElement('div'); 
       divImage.className = 'divImage';
       let aImage = document.createElement('a');
-      aImage.setAttribute('href','#myModal');
-      aImage.setAttribute('data-toggle','modal')
-      aImage.setAttribute('data-target', '#miModal');
       let image = document.createElement('img');
       image.setAttribute('src', swapi[index].image);
       let textImage = document.createTextNode(data.results[index].name);
@@ -73,62 +69,14 @@ fetch('https://swapi.co/api/people/')
         }
       }
 
-/* Función para crear modal por cada personaje */
-        divImage.addEventListener('click', function (event) {
-      let objetivo = event.target.getAttribute('src');          
-        for (let k = 0; k < swapi.length; k++) {
-        if (objetivo === swapi[k].image) {
-      let textInfo = swapi.text;
-      let myModalLabel = document.querySelector('#myModalLabel');
-      let titlee = data.results[index].name;
-          myModalLabel.appendChild(document.createTextNode(titlee));
-      let boxImagem = document.createElement('div');
-      let Imagem = document.createElement('img');
-          Imagem.setAttribute('src', swapi[k].image)
-          boxImagem.appendChild(Imagem);
-
-/* Contenido del modal, información obtenida de la API personajes */
-      let containerGender = document.createElement('p');
-          containerGender.setAttribute('class','gender');
-          containerGender.appendChild(document.createTextNode('Gender: ' +data.results[index].gender));
-              
-      let containerEyeColor = document.createElement('p');
-          containerEyeColor.setAttribute('class','eyeColor');
-          containerEyeColor.appendChild(document.createTextNode('Eye Color: ' +data.results[index].eye_color));
-              
-      let containerHairColor = document.createElement('p');
-          containerHairColor.setAttribute('class','hairColor');
-          containerHairColor.appendChild(document.createTextNode('Hair Color: ' +data.results[index].hair_color));
-              
-      let containerHeight = document.createElement('p');
-          containerHeight.setAttribute('class','height');
-          containerHeight.appendChild(document.createTextNode('Height: ' +data.results[index].height))
-              
-      let containerMoreInfo = document.createElement('button');
-          containerMoreInfo.setAttribute('class','colorButton');
-          containerMoreInfo.setAttribute('id','btnMoreInfo');
-          containerMoreInfo.appendChild(document.createTextNode('More Info'));
-
-      let modalbody = document.querySelector('.modal-body');
-          modalbody.innerHTML = '';
-          modalbody.appendChild(boxImagem);
-          modalbody.appendChild(containerGender);
-          modalbody.appendChild(containerEyeColor);
-          modalbody.appendChild(containerHairColor);
-          modalbody.appendChild(containerHeight);
-          modalbody.appendChild(containerMoreInfo);
-
-/* Función del botón More Info, ocultando secciones */
-          btnMoreInfo.addEventListener('click', function(){
-          document.getElementById('sectionPersonajes').innerHTML = ""; 
-          document.getElementById('containerFilms').style.display = 'block';
-
-          });
-          }
-          }
-        });
+       let btnMoreInfo = document.getElementById('btnMoreInfo');
+      btnMoreInfo.onclick = function () {
+        document.getElementById('sectionPersonajes').style.display = 'none'; 
+        document.getElementById('containerFilms').style.display = 'block';
       }
+    }
   }
+
 
 /* API films de Star Wars */
 fetch('https://swapi.co/api/films/')
@@ -156,30 +104,33 @@ fetch('https://swapi.co/api/films/')
         containerDirector.setAttribute('class','directorFilm');
         containerDirector.appendChild(document.createTextNode('Director: ' +dato.results[0].director));
 
+    let divImageGeorge = document.createElement('div');
+        //divImageGeorge.setAttribute('class','col-md-12');
     let containerGeorge = document.createElement('img');
         containerGeorge.setAttribute('class','georgeImg');
         containerGeorge.setAttribute('src','assets/images/georgeLucas.jpg');
+        divImageGeorge.appendChild(containerGeorge);
 
+    let divImageBtnCharacters = document.createElement('div');
     let containerBtnCharacters = document.createElement('button');
         containerBtnCharacters.setAttribute('id','buttonCharacter');
         containerBtnCharacters.setAttribute('class','btnCharacter');
         containerBtnCharacters.appendChild(document.createTextNode('Choose Character'));
+        divImageBtnCharacters.appendChild(containerBtnCharacters);
 
         divContainerFilm.appendChild(containerTitleFilm);
         divContainerFilm.appendChild(containerEpisodio);
         divContainerFilm.appendChild(containerDirector);
-        divContainerFilm.appendChild(containerGeorge);
-        divContainerFilm.appendChild(containerBtnCharacters);
+        divContainerFilm.appendChild(divImageGeorge);
+        divContainerFilm.appendChild(divImageBtnCharacters);
         containerFilms.appendChild(divContainerFilm);
 
-    buttonCharacter.addEventListener('click', function(){
-      document.getElementById('containerFilms').style.display = 'none';
-      document.getElementById('sectionModal').style.display = 'block';
-      document.getElementById('btnsGender').style.display = 'block';
-      document.getElementById('contImages').style.display = 'block';
+     let buttonCharacter = document.getElementById('buttonCharacter');
+      buttonCharacter.onclick = function () {
+        document.getElementById('containerFilms').style.display = 'none'; 
+        document.getElementById('sectionPersonajes').style.display = 'block';
+      }
 
-
-    });
   }); 
 
     });

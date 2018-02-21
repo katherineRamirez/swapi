@@ -1,4 +1,19 @@
-@media (min-width: 200px) and (max-width: 700px) {
+@media (min-width: 501px) and (max-width: 800px) {
+	[class*="col-"] {
+		width: 100%;
+	}
+
+	.georgeImg{
+    width: 85%;
+    margin-left: 1em;
+
+	}
+	.btnCharacter{
+    margin-left: 15em;   
+	}
+
+}
+@media (min-width: 200px) and (max-width: 500px) {
 	[class*="col-"] {
 		width: 100%;
 	}
@@ -17,5 +32,16 @@
 	}
 	.namePerson{
 	font-size: 0.80em;
+	}
+	.titleFilm{
+    margin-top: 0.70em;
+	}
+	.georgeImg{
+    width: 75%;
+	margin-left: 3em;
+	}
+	.btnCharacter{
+    margin-left: 7em;
+    padding: 0.50em 1em;
 	}
 }
