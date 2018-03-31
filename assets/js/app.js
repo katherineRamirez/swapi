@@ -6,7 +6,7 @@ fetch('https://swapi.co/api/people/')
         return response.json();
     })
     .then(function (data) {
-
+      console.log(data)
 /* Contenedor de imágenes de personajes */
       let containerImages = document.querySelector('.containerImages');
       document.getElementById('containerFilms').style.display = 'none';
